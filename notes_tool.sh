@@ -13,7 +13,7 @@ read_frontmatter() {
 }
 
 print_docs() {
-  sed '/---/,/---/d' "$1" | bat -l md --color always
+  sed '/---/,/---/d' "$1" | mdcat
 }
 
 has_snippet() {

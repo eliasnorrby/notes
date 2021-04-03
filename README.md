@@ -32,3 +32,4 @@ be shown in the top of the preview window. Copy it with `ctrl-y`.
 - `fzf`
 - `yq`
 - `bat`
+- `mdcat`
