@@ -4,24 +4,44 @@ NOTES_DIR=~/notes/notes
 TEMPLATE_FILE="${NOTES_DIR}/note-template.md"
 EXT=md
 
+# colors
+DARK_GRAY=$(tput setaf 8)
+NC=$(tput sgr 0) # No Color
+
 list() {
-  find . -type f -name "*.${EXT}" | sed -e 's#^\./##' -e 's#\.'"${EXT}"'$##'
+  find . -type f -name "*.${EXT}"  | sed -e 's#^\./##' -e 's#\.'"${EXT}"'$##'
+}
+
+list_with_tags() {
+  list | append_tags
+}
+
+append_tags() {
+  while read -r file; do
+    printf '%s' "$file"
+    if has_key "$file" 'tags'; then
+      local tags
+      tags=$(read_key "$file" 'tags' | tr -d '-' | tr -d '\n')
+      printf '%s' "${DARK_GRAY}$tags${NC}"
+    fi
+    echo
+  done
 }
 
 read_frontmatter() {
-  sed -n '/---/,/---/ { /---/d; p; }' "$1"
+  [ -n "$1" ] && sed -n '/---/,/---/ { /---/d; p; }' "$(_ext "$1")"
 }
 
 print_docs() {
   sed '/---/,/---/d' "$1" | mdcat
 }
 
-has_snippet() {
-  test "$(read_frontmatter "$1" | yq eval 'has("snippet")' -)" = 'true'
+has_key() {
+  test "$(read_frontmatter "$1" | yq eval "has(\"${2}\")" -)" = 'true'
 }
 
-read_snippet() {
-  read_frontmatter "$1" | yq eval '.snippet' -
+read_key() {
+  read_frontmatter "$1" | yq eval ".${2}" -
 }
 
 print_snippet() {
@@ -29,7 +49,7 @@ print_snippet() {
   echo "> Copy this snippet: "
   echo
   syntax=$(sed -n '/---/,/---/ { /---/d; p; }' "$1" | yq eval '.syntax' -)
-  read_snippet "$1" | bat -l "$syntax" --color always
+  read_key "$1" 'snippet' | bat -l "$syntax" --color always
 }
 
 divider() {
@@ -45,7 +65,7 @@ divider_oneline() {
 }
 
 preview() {
-  if has_snippet "$1"; then
+  if has_key "$1" 'snippet'; then
     print_snippet "$1"
     divider_oneline
   fi
@@ -74,10 +94,10 @@ else
 fi
 
 copy_snippet() {
-  if ! has_snippet "$1"; then
+  if ! has_key "$1" 'snippet'; then
     return
   fi
-  read_snippet "$1" | copy_cmd
+  read_key "$1" 'snippet' | copy_cmd
 }
 
 editor_is_vim() {
@@ -115,6 +135,9 @@ cd "$NOTES_DIR" || exit
 case $1 in
   list)
     list
+    ;;
+  list-with-tags)
+    list_with_tags
     ;;
   preview)
     preview "$(_ext "$2")"
