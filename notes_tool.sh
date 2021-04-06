@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 
-NOTES_DIR=~/notes/notes
+NOTES_DIR=${NOTES_DIR:-~/notes/notes}
 TEMPLATE_FILE="${NOTES_DIR}/note-template.md"
 EXT=md
+
+CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/notes
+NOTES_DIR_STAT_FILE=${CACHE_DIR}/notes_dir_stat
+LIST_WITH_TAGS_CACHE=${CACHE_DIR}/list_with_tags
+
+if [ ! -d "$CACHE_DIR" ]; then
+  mkdir -p "$CACHE_DIR"
+fi
 
 # colors
 DARK_GRAY=$(tput setaf 8)
@@ -12,8 +20,18 @@ list() {
   find . -type f -name "*.${EXT}"  | sed -e 's#^\./##' -e 's#\.'"${EXT}"'$##'
 }
 
+cache_is_valid() {
+  [ -e "$NOTES_DIR_STAT_FILE" ] && [ "$(stat -t "$NOTES_DIR")" = "$(cat "$NOTES_DIR_STAT_FILE")" ]
+}
+
 list_with_tags() {
-  list | append_tags
+  if cache_is_valid; then
+    cat "$LIST_WITH_TAGS_CACHE"
+    return
+  fi
+
+  stat -t "$NOTES_DIR" > "$NOTES_DIR_STAT_FILE"
+  list | append_tags | tee "$LIST_WITH_TAGS_CACHE"
 }
 
 append_tags() {
