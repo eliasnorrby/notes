@@ -1,8 +1,9 @@
 ---
 subject: git
-syntax: bash
-snippet: |
-  git rev-parse --abbrev-ref HEAD
+snippets:
+  - syntax: bash
+    content: |
+      git rev-parse --abbrev-ref HEAD
 ---
 
 # Git - name of current branch

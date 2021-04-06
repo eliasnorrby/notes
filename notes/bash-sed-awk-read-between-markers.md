@@ -1,12 +1,22 @@
 ---
 subject: bash
-syntax: bash
 tags:
   - scripting
   - sed
   - awk
-snippet: |
-  sed -n '/^---$/,/^---$/ { /^---$/d; p; }'
+snippets:
+  - syntax: bash
+    content: |
+      sed -n '/^---$/,/^---$/ { /^---$/d; p; }'
+  - syntax: bash
+    content: |
+      awk '/^---$/{flag =! flag; next}flag'
+  - syntax: bash
+    content: |
+      awk '/^---$/{if (flag == 0) {flag = 1;next} else {exit}}flag'
+  - syntax: bash
+    content: |
+      awk '/start/{flag=1;next}/end/{flag=0}flag'
 ---
 
 # Reading content between markers

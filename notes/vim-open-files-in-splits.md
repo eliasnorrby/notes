@@ -3,8 +3,10 @@ subject: vim
 syntax: bash
 tags:
   - vim
-snippet: |
-  vim -o *.sh
+snippets:
+  - syntax: bash
+    content: |
+      vim -o *.sh
 ---
 
 # Opening a list of files in split windows

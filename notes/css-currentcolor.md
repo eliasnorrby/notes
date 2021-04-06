@@ -3,9 +3,10 @@ subject: css
 tags:
   - color
   - explicit
-syntax: css
-snippet: |
-  border: 2px solid currentColor;
+snippets:
+  - syntax: css
+    content: |
+      border: 2px solid currentColor;
 ---
 
 # The `currentColor` keyword
