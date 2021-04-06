@@ -1,12 +1,13 @@
 ---
 subject: bash
-syntax: bash
 tags:
   - scripting
   - grep
   - awk
-snippet: |
-  awk '/PATTERN/ && (++c == NUM) { print NR; exit }' INPUT
+snippets:
+  - syntax: bash
+    content: |
+      awk '/PATTERN/ && (++c == NUM) { print NR; exit }' INPUT
 ---
 
 # Getting the line number of the nth match
@@ -36,3 +37,5 @@ performance. An alternative using `awk` may be less I/O intensive:
 ```bash
 awk '/^---$/ && (++c == 2) { print NR; exit }' input.md
 ```
+
+[Source](https://stackoverflow.com/questions/57044203/how-to-get-the-line-number-of-nth-match#comment100617725_57044437)

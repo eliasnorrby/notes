@@ -1,13 +1,14 @@
 ---
 subject: css
-syntax: css
 tags:
   - margin
   - layout
   - centering
-snippet: |
-  margin-left: auto;
-  margin-right: auto;
+snippets:
+  - syntax: css
+    content: |
+      margin-left: auto;
+      margin-right: auto;
 ---
 
 # Using `margin: auto;` for centering

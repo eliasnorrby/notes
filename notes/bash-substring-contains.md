@@ -1,10 +1,11 @@
 ---
 subject: bash
-syntax: bash
-snippet: |
-  if [ "${var#*substring}" != "${var}" ]; then
-    # do stuff
-  fi
+snippets:
+  - syntax: bash
+    content: |
+      if [ "${var#*substring}" != "${var}" ]; then
+        # do stuff
+      fi
 ---
 
 # Bash substring

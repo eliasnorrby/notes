@@ -1,12 +1,13 @@
 ---
 subject: css
-syntax: css
-snippet: |
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+snippets:
+  - syntax: css
+    content: |
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 ---
 
 # `box-sizing: border-box`
