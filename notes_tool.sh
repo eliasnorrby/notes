@@ -8,6 +8,7 @@ CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/notes
 NOTES_DIR_STAT_FILE=${CACHE_DIR}/notes_dir_stat
 LIST_WITH_TAGS_CACHE=${CACHE_DIR}/list_with_tags
 NOTES_SNIPPET_IDX_DIR=${CACHE_DIR}/snippet_idx
+LAST_DOCS_PRINTED=${CACHE_DIR}/last_docs_printed
 
 if [ ! -d "$NOTES_SNIPPET_IDX_DIR" ]; then
   mkdir -p "$NOTES_SNIPPET_IDX_DIR"
@@ -57,6 +58,11 @@ read_frontmatter() {
 
 print_docs() {
   local boundary
+  if [ -f "$LAST_DOCS_PRINTED" ]; then
+    echo "$(<"$LAST_DOCS_PRINTED")"
+    rm "$LAST_DOCS_PRINTED"
+    return
+  fi
   boundary=$(frontmatter_boundary "$1")
   boundary=$((boundary+1))
   sed -n "${boundary},$ p" "$1" | mdcat
@@ -104,6 +110,8 @@ next_snippet() {
   fi
 
   write_snippet_idx "$1" "$next_idx"
+  print_docs "$1" > "$LAST_DOCS_PRINTED.tmp"
+  mv "$LAST_DOCS_PRINTED.tmp" "$LAST_DOCS_PRINTED"
 }
 
 print_snippet() {
