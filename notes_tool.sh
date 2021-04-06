@@ -28,12 +28,19 @@ append_tags() {
   done
 }
 
+frontmatter_boundary() {
+  awk '/^---$/ && (++c == 2) { print NR; exit }' "$1"
+}
+
 read_frontmatter() {
   [ -n "$1" ] && awk '/^---$/{if (flag == 0) {flag = 1;next} else {exit}}flag' "$(_ext "$1")"
 }
 
 print_docs() {
-  sed '/---/,/---/d' "$1" | mdcat
+  local boundary
+  boundary=$(frontmatter_boundary "$1")
+  boundary=$((boundary+1))
+  sed -n "${boundary},$ p" "$1" | mdcat
 }
 
 has_key() {
