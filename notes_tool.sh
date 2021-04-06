@@ -7,9 +7,10 @@ EXT=md
 CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/notes
 NOTES_DIR_STAT_FILE=${CACHE_DIR}/notes_dir_stat
 LIST_WITH_TAGS_CACHE=${CACHE_DIR}/list_with_tags
+NOTES_SNIPPET_IDX_DIR=${CACHE_DIR}/snippet_idx
 
-if [ ! -d "$CACHE_DIR" ]; then
-  mkdir -p "$CACHE_DIR"
+if [ ! -d "$NOTES_SNIPPET_IDX_DIR" ]; then
+  mkdir -p "$NOTES_SNIPPET_IDX_DIR"
 fi
 
 # colors
@@ -21,7 +22,7 @@ list() {
 }
 
 cache_is_valid() {
-  [ -e "$NOTES_DIR_STAT_FILE" ] && [ "$(stat -t "$NOTES_DIR")" = "$(cat "$NOTES_DIR_STAT_FILE")" ]
+  [ -e "$NOTES_DIR_STAT_FILE" ] && [ "$(stat -t "$NOTES_DIR")" = "$(<"$NOTES_DIR_STAT_FILE")" ]
 }
 
 list_with_tags() {
@@ -69,12 +70,58 @@ read_key() {
   read_frontmatter "$1" | yq eval ".${2}" -
 }
 
+read_snippet_idx() {
+  local idx_file="$NOTES_SNIPPET_IDX_DIR/$1"
+  if [ -f "$idx_file" ]; then
+    cat "$idx_file"
+  else
+    echo 0
+  fi
+}
+
+write_snippet_idx() {
+  local idx_file="$NOTES_SNIPPET_IDX_DIR/$1"
+  echo "$2" > "$idx_file"
+}
+
+get_snippet_count() {
+  read_frontmatter "$1" | yq eval ".snippets | length" -
+}
+
+next_snippet() {
+  local idx next_idx count
+  count="$(get_snippet_count "$1")"
+  if [ "$count" = 1 ]; then
+    return
+  fi
+
+  idx=$(read_snippet_idx "$1")
+  next_idx=$((idx + 1))
+  if [ "$idx" -eq "$((count - 1))" ]; then
+    next_idx=0
+  else
+    next_idx=$((idx + 1))
+  fi
+
+  write_snippet_idx "$1" "$next_idx"
+}
+
 print_snippet() {
-  local syntax
-  echo "> Copy this snippet: "
+  local syntax idx count
+  local message="> Copy this snippet: "
+  count="$(get_snippet_count "$1")"
+  if [ "$count" -eq 1 ]; then
+    idx=0
+  else
+    idx=$(read_snippet_idx "$1")
+    message="$message ($((idx + 1))/$count)"
+  fi
+
+  echo "$message"
   echo
-  syntax=$(read_frontmatter "$1" | yq eval '.syntax' -)
-  read_key "$1" 'snippet' | bat -l "$syntax" --color always
+
+  syntax=$(read_key "$1" "snippets[$idx].syntax")
+  read_key "$1" "snippets[$idx].content" | bat -l "$syntax" --color always
 }
 
 divider() {
@@ -90,7 +137,7 @@ divider_oneline() {
 }
 
 preview() {
-  if has_key "$1" 'snippet'; then
+  if has_key "$1" 'snippets'; then
     print_snippet "$1"
     divider_oneline
   fi
@@ -119,10 +166,12 @@ else
 fi
 
 copy_snippet() {
-  if ! has_key "$1" 'snippet'; then
+  if ! has_key "$1" 'snippets'; then
     return
   fi
-  read_key "$1" 'snippet' | copy_cmd
+
+  idx=$(read_snippet_idx "$1")
+  read_key "$1" "snippets[$idx].content" | copy_cmd
 }
 
 editor_is_vim() {
@@ -166,6 +215,9 @@ case $1 in
     ;;
   preview)
     preview "$(_ext "$2")"
+    ;;
+  next-snippet)
+    next_snippet "$(_ext "$2")"
     ;;
   copy)
     copy_snippet "$(_ext "$2")"
