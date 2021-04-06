@@ -29,7 +29,7 @@ append_tags() {
 }
 
 read_frontmatter() {
-  [ -n "$1" ] && sed -n '/---/,/---/ { /---/d; p; }' "$(_ext "$1")"
+  [ -n "$1" ] && awk '/^---$/{if (flag == 0) {flag = 1;next} else {exit}}flag' "$(_ext "$1")"
 }
 
 print_docs() {
@@ -48,7 +48,7 @@ print_snippet() {
   local syntax
   echo "> Copy this snippet: "
   echo
-  syntax=$(sed -n '/---/,/---/ { /---/d; p; }' "$1" | yq eval '.syntax' -)
+  syntax=$(read_frontmatter "$1" | yq eval '.syntax' -)
   read_key "$1" 'snippet' | bat -l "$syntax" --color always
 }
 
