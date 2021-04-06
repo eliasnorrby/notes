@@ -28,7 +28,7 @@ title: some frontmatter
 ```
 
 ```bash
-grep '^---$' -m 2 -n input.md | tail -1 | cut -d ":" -f 2
+grep '^---$' -m 2 -n input.md | tail -1 | cut -d ":" -f 1
 ```
 
 This gets the job done, but it invokes a number of subshells, reducing
