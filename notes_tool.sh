@@ -19,7 +19,7 @@ DARK_GRAY=$(tput setaf 8)
 NC=$(tput sgr 0) # No Color
 
 list() {
-  find . -type f -name "*.${EXT}"  | sed -e 's#^\./##' -e 's#\.'"${EXT}"'$##'
+  find . -type f -name "*.${EXT}"  | sed -E -e 's#^\./##' -e 's#\.'"${EXT}"'$##' -e '/^SUMMARY$|^README$|^tags$|^template$/d'
 }
 
 cache_is_valid() {
@@ -87,6 +87,8 @@ read_snippet_idx() {
 
 write_snippet_idx() {
   local idx_file="$NOTES_SNIPPET_IDX_DIR/$1"
+  local idx_file_dir="$NOTES_SNIPPET_IDX_DIR/${1%/*}"
+  [ ! -d "$idx_file_dir" ] && mkdir -p "$idx_file_dir"
   echo "$2" > "$idx_file"
 }
 
