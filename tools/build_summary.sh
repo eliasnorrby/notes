@@ -8,7 +8,7 @@ cd "$NOTES_DIR" || exit
 
 subject_sections() {
   local files subjects
-  subjects=$(find . -type d | remove_leading_dot | grep -v '^\.')
+  subjects=$(find . -type d | remove_leading_dot | grep -v '^\.' | sort)
 
   for subject in $subjects; do
     echo "## $subject"
