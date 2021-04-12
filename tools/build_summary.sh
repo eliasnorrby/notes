@@ -39,12 +39,6 @@ get_title() {
 read -r -d "" SUMMARY <<EOF
 # Summary
 
-Here is the summary.
-
-* [About](../README.md)
-
----
-
 $(subject_sections)
 EOF
 

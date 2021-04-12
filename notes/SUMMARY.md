@@ -1,15 +1,5 @@
 # Summary
 
-Here is the summary.
-
-* [About](../README.md)
-
----
-
-## note
-
-* [Docs](note/template.md)
-
 ## css
 
 * [`box-sizing: border-box`](css/box-sizing-border-box.md)
