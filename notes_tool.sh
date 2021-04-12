@@ -189,11 +189,21 @@ editor_is_vim() {
 }
 
 create_from_template() {
-  local filename="$1"
+  local filename="$1" dirname="${1%%/*}"
   if [ "${filename#* }" != "${filename}" ]; then
     # Who would put spaces in a filname?
     exit 1
   fi
+
+  if [ "$dirname" = "$filename" ]; then
+    dirname="other"
+    filename="$dirname/$filename"
+  fi
+
+  if [ ! -d "$dirname" ]; then
+    mkdir "$dirname"
+  fi
+
   cp "$TEMPLATE_FILE" "$filename"
 }
 
