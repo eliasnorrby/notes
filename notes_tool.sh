@@ -42,7 +42,7 @@ append_tags() {
     printf '%s' "$file"
     if has_key "$file" 'tags'; then
       local tags
-      tags=$(read_key "$file" 'tags' | tr -d '-' | tr -d '\n')
+      tags=$(read_key "$file" 'tags' | sed 's/^- / /' | tr -d '\n')
       printf '%s' "${DARK_GRAY}$tags${NC}"
     fi
     echo
