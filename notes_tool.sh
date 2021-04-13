@@ -20,7 +20,7 @@ DARK_GRAY=$(tput setaf 8)
 NC=$(tput sgr 0) # No Color
 
 list() {
-  find . -type f -name "*.${EXT}"  | sed -E -e 's#^\./##' -e 's#\.'"${EXT}"'$##' -e '/^SUMMARY$|^README$|^tags$|^template$/d'
+  find . -type f -name "*.${EXT}"  | sed -E -e 's#^\./##' -e 's#\.'"${EXT}"'$##' -e '/^SUMMARY$|^README$|^tags$|^note-template$/d'
 }
 
 cache_is_valid() {
