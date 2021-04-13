@@ -23,6 +23,10 @@ list() {
   find . -type f -name "*.${EXT}"  | sed -E -e 's#^\./##' -e 's#\.'"${EXT}"'$##' -e '/^SUMMARY$|^README$|^tags$|^note-template$/d'
 }
 
+invalidate_cache() {
+  [ -f "$NOTES_DIR_STAT_FILE" ] && rm "$NOTES_DIR_STAT_FILE"
+}
+
 cache_is_valid() {
   [ -e "$NOTES_DIR_STAT_FILE" ] && [ "$(stat -t "$NOTES_DIR")" = "$(<"$NOTES_DIR_STAT_FILE")" ]
 }
@@ -245,5 +249,8 @@ case $1 in
     ;;
   open-or-create)
     open_or_create "$(_ext "$2")"
+    ;;
+  invalidate-cache)
+    invalidate_cache
     ;;
 esac
