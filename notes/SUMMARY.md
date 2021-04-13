@@ -18,8 +18,14 @@
 
 ## git
 
+* [Listing untracked files with `git status`](git/status-untracked-files.md)
 * [Conditional git config includes](git/config-conditional-includes-directory.md)
 * [Git - name of current branch](git/get-current-branch.md)
+
+## rust
+
+* [The `match` operator](rust/match-operator.md)
+* [Unwrapping a `Result`](rust/unwrapping.md)
 
 ## vim
 
