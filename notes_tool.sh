@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-NOTES_DIR=${NOTES_DIR:-~/notes/notes}
+NOTES_HOME=${NOTES_HOME:-~/notes}
+NOTES_DIR=${NOTES_HOME}/${NOTES_DIR:-notes}
 TEMPLATE_FILE="${NOTES_DIR}/note-template.md"
 EXT=md
 
