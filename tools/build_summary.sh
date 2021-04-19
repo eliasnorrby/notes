@@ -24,7 +24,7 @@ remove_leading_dot() {
 
 note_links() {
   local files title
-  files=$(find "$1" -type f -name '*.md' | remove_leading_dot)
+  files=$(find "$1" -type f -name '*.md' | remove_leading_dot | sort)
 
   for file in $files; do
     title=$(get_title "$file")
