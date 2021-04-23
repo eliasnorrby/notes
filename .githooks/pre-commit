@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Build summary and stage if changed.
+
+if [ ! -x tools/build_summary.sh ]; then
+  echo "Summary build script not found or not executable"
+  exit 1
+fi
+
+notes_changes_staged() {
+  git diff --name-only --cached | grep '^notes/' > /dev/null 2>&1
+}
+
+if notes_changes_staged; then
+  ./tools/build_summary.sh > notes/SUMMARY.md
+  git add notes/SUMMARY.md
+fi
