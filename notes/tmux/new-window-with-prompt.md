@@ -30,7 +30,7 @@ I want to eliminate the need to type the project name twice and came up with
 this mapping:
 
 ```tmux
-bind z new-window \; command-prompt -p " Window name:" "rename-window '#{?%1,%1,zsh}' \; send-keys z ' %1' C-m"
+bind z new-window \; command-prompt -p " Window name:" "rename-window '#{?#{!=:%1,''},%1,zsh}' \; send-keys z ' %1' C-m"
 ```
 
 Here, we're reading the project name with `command-prompt`, using the input as
