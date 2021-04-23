@@ -26,6 +26,10 @@
 * [Git - name of current branch](git/get-current-branch.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
 
+## groovy
+
+* [Appending items to a list](groovy/add-item-to-list.md)
+
 ## rust
 
 * [The `match` operator](rust/match-operator.md)
