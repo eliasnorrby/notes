@@ -27,8 +27,13 @@
 * [The `match` operator](rust/match-operator.md)
 * [Unwrapping a `Result`](rust/unwrapping.md)
 
+## tmux
+
+* [New window with prompt](tmux/new-window-with-prompt.md)
+
 ## vim
 
+* [The command-line window](vim/command-line-window.md)
 * [Opening a list of files in split windows](vim/open-files-in-splits.md)
 
 ## yaml
