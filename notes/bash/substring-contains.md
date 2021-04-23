@@ -6,6 +6,9 @@ snippets:
       if [ "${var#*substring}" != "${var}" ]; then
         # do stuff
       fi
+  - syntax: bash
+    content: |
+      [ "${var#*substring}" != "${var}" ]
 ---
 
 # Bash substring
