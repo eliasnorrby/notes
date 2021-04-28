@@ -9,6 +9,7 @@
 * [Case statement](bash/case-statement.md)
 * [Getting the line number of the nth match](bash/get-line-number-of-nth-match.md)
 * [Getopts](bash/getopts-flags.md)
+* [Remove final newline](bash/remove-final-newline-from-output.md)
 * [Reading content between markers](bash/sed-awk-read-between-markers.md)
 * [Bash substring](bash/substring-contains.md)
 
