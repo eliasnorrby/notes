@@ -16,7 +16,9 @@
 
 * [`box-sizing: border-box`](css/box-sizing-border-box.md)
 * [The `currentColor` keyword](css/currentcolor.md)
+* [Wrapper taking up at least 100% height](css/fill-height-wrapper.md)
 * [Using `margin: auto;` for centering](css/margin-auto.md)
+* [Margin-collapse](css/margin-collapse.md)
 * [Which unit to use?](css/units-to-use.md)
 * [Hiding elements](css/visually-hidden.md)
 
