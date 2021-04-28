@@ -6,7 +6,7 @@ tags:
   - centering
 snippets:
   - syntax: css
-    content: |
+    content: |-
       margin-left: auto;
       margin-right: auto;
 ---

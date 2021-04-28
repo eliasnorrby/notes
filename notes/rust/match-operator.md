@@ -5,7 +5,7 @@ tags:
   - control-flow
 snippets:
   - syntax: rust
-    content: |
+    content: |-
       match result {
         Ok(content) => handle(content),
         Err(error) => panic!("Or handle otherwise: {}", error),

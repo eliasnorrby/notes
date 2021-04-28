@@ -6,16 +6,16 @@ tags:
   - awk
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       sed -n '/^---$/,/^---$/ { /^---$/d; p; }'
   - syntax: bash
-    content: |
+    content: |-
       awk '/^---$/{flag =! flag; next}flag'
   - syntax: bash
-    content: |
+    content: |-
       awk '/^---$/{if (flag == 0) {flag = 1;next} else {exit}}flag'
   - syntax: bash
-    content: |
+    content: |-
       awk '/start/{flag=1;next}/end/{flag=0}flag'
 ---
 

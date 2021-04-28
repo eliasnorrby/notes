@@ -6,7 +6,7 @@ tags:
   - scripting
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       git status --untracked-files
 ---
 

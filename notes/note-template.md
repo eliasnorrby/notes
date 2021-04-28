@@ -6,7 +6,7 @@ tags:
   - tags
 snippets:
   - syntax: SYNTAX
-    content: |
+    content: |-
       put a (multiline) snippet here
 ---
 

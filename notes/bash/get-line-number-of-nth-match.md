@@ -6,7 +6,7 @@ tags:
   - awk
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       awk '/PATTERN/ && (++c == NUM) { print NR; exit }' INPUT
 ---
 

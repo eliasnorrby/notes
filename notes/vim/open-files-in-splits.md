@@ -5,7 +5,7 @@ tags:
   - vim
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       vim -o *.sh
 ---
 

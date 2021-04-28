@@ -2,10 +2,10 @@
 subject: git
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       git branch --show-current
   - syntax: bash
-    content: |
+    content: |-
       git rev-parse --abbrev-ref HEAD
 ---
 

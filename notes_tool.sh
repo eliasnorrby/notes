@@ -186,7 +186,7 @@ copy_snippet() {
   fi
 
   idx=$(read_snippet_idx "$1")
-  read_key "$1" "snippets[$idx].content" | copy_cmd
+  read_key "$1" "snippets[$idx].content" | head -c -1 | copy_cmd
 }
 
 editor_is_vim() {

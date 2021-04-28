@@ -6,7 +6,7 @@ tags:
   - list
 snippets:
   - syntax: groovy
-    content: |
+    content: |-
       list << "item"
 ---
 

@@ -5,7 +5,7 @@ tags:
   - explicit
 snippets:
   - syntax: css
-    content: |
+    content: |-
       border: 2px solid currentColor;
 ---
 

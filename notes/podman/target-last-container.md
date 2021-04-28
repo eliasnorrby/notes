@@ -5,7 +5,7 @@ tags:
   - container
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       podman exec -l
 ---
 

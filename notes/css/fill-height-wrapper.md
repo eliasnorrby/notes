@@ -5,7 +5,7 @@ tags:
   - footer
 snippets:
   - syntax: css
-    content: |
+    content: |-
       html, body {
         height: 100%;
       }
@@ -14,7 +14,7 @@ snippets:
         min-height: 100%;
       }
   - syntax: css
-    content: |
+    content: |-
       html, body {
         height: 100%;
       }

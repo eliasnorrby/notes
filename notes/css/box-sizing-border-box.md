@@ -2,7 +2,7 @@
 subject: css
 snippets:
   - syntax: css
-    content: |
+    content: |-
       *,
       *::before,
       *::after {

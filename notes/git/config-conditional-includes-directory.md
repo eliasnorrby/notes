@@ -5,7 +5,7 @@ tags:
   - work
 snippets:
   - syntax: conf
-    content: |
+    content: |-
       [includeIf "gitdir:work/"]
         path = config-work
 ---

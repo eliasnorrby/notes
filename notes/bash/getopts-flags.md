@@ -2,7 +2,7 @@
 subject: bash
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       ERROR="Bad usage, see ${0##*/} -h"
 
       read -r -d "" USAGE <<EOF

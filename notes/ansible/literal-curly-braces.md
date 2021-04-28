@@ -6,7 +6,7 @@ tags:
   - templating
 snippets:
   - syntax: jinja2
-    content: |
+    content: |-
       "{% raw %}{{.State}}{% endraw %}"
 ---
 

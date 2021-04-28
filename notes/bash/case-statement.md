@@ -2,7 +2,7 @@
 subject: bash
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       case $var in
         one) echo "hello" ;;
         two) echo "world" ;;

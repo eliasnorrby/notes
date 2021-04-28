@@ -4,13 +4,13 @@ tags:
   - yaml
 snippets:
   - syntax: yaml
-    content: |
+    content: |-
       multiline: >
         this will
         be a single
         line
   - syntax: yaml
-    content: |
+    content: |-
       multiline: |
         with a | the newlines
         will be preserved

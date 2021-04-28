@@ -5,7 +5,7 @@ tags:
   - accessibility
 snippets:
   - syntax: css
-    content: |
+    content: |-
       .visually-hidden:not(:focus):not(:active) {
         clip: rect(0 0 0 0);
         clip-path: inset(50%);

@@ -2,12 +2,12 @@
 subject: bash
 snippets:
   - syntax: bash
-    content: |
+    content: |-
       if [ "${var#*substring}" != "${var}" ]; then
         # do stuff
       fi
   - syntax: bash
-    content: |
+    content: |-
       [ "${var#*substring}" != "${var}" ]
 ---
 
