@@ -14,7 +14,7 @@ snippets:
 To get the name of the current branch, we can use `git rev-parse`:
 
 ```bash
-$ git rev-parse --abbrev-ref HEAD
+git rev-parse --abbrev-ref HEAD
 ```
 
 This will print the name of the current branch _as long as we have one checked
@@ -25,7 +25,7 @@ the name of the current branch, but intead will print nothing if we're in a
 detached HEAD state.
 
 ```bash
-$ git branch --show-current
+git branch --show-current
 ```
 
 Source: `man git-rev-parse`, `man git-branc`
