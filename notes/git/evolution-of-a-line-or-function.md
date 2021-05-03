@@ -62,6 +62,6 @@ We can define a custom regular expression that suits our purposes, but there
 are a few built-in patterns to make this easier, and `java` is one of them, so
 we're all set.
 
-Sources:
-`LESS='-p Defining a custom hunk-header' man gitattributes`
-`LESS='-p -L<start>' man git-log`
+Source:
+- `LESS='-p Defining a custom hunk-header' man gitattributes`
+- `LESS='-p -L<start>' man git-log`
