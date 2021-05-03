@@ -5,6 +5,8 @@ NOTES_DIR=${NOTES_HOME}/${NOTES_DIR:-notes}
 TEMPLATE_FILE="${NOTES_DIR}/note-template.md"
 EXT=md
 
+NOTES_WEB_URL='https://notes.eliasnorrby.com'
+
 CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/notes
 NOTES_DIR_STAT_FILE=${CACHE_DIR}/notes_dir_stat
 LIST_WITH_TAGS_CACHE=${CACHE_DIR}/list_with_tags
@@ -173,12 +175,18 @@ _os() {
 }
 
 if [ "$(_os)" = "macos" ]; then
-  copy_cmd () {
+  copy_cmd() {
     pbcopy
   }
+  open_cmd() {
+    open "$@"
+  }
 else
-  copy_cmd () {
+  copy_cmd() {
     xsel --clipboard
+  }
+  open_cmd() {
+    xdg-open "$@"
   }
 fi
 
@@ -231,6 +239,11 @@ open_or_create() {
   "$EDITOR" "$filename"
 }
 
+open_in_browser() {
+  local file=$1
+  open_cmd "$NOTES_WEB_URL/$file"
+}
+
 cd "$NOTES_DIR" || exit
 
 case $1 in
@@ -251,6 +264,9 @@ case $1 in
     ;;
   open-or-create)
     open_or_create "$(_ext "$2")"
+    ;;
+  open-in-browser)
+    open_in_browser "$2"
     ;;
   invalidate-cache)
     invalidate_cache

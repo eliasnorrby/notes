@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 header_first_row='[alt-]enter: open | ctrl-y: copy snippet | ctrl-r: reload'
-header_second_row='ctrl-n: cycle snippets | ctrl-w: commit notes'
+header_second_row='ctrl-n: cycle snippets | ctrl-w: commit notes | ctrl-o: open in browser'
 
 file=$(./notes_tool.sh list-with-tags | fzf \
   --ansi \
@@ -13,6 +13,7 @@ file=$(./notes_tool.sh list-with-tags | fzf \
   --bind 'ctrl-y:execute-silent(./notes_tool.sh copy {1})+abort' \
   --bind 'ctrl-r:execute-silent(./notes_tool.sh invalidate-cache)+reload(./notes_tool.sh list-with-tags)' \
   --bind 'ctrl-n:execute-silent(./notes_tool.sh next-snippet {1})+refresh-preview' \
+  --bind 'ctrl-o:execute-silent(./notes_tool.sh open-in-browser {1})+abort' \
   --bind 'ctrl-w:execute(./commit_notes.sh prompt >&2)+abort' \
   --bind 'alt-enter:print-query' \
   --print-query | tail -1 | cut -d " " -f 1
