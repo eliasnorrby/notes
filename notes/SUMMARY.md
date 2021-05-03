@@ -7,11 +7,15 @@
 ## bash
 
 * [Case statement](bash/case-statement.md)
+* [Change quote style mid-string](bash/change-quote-mid-string.md)
+* [Using find to run a command on multiple files](bash/find-exec.md)
 * [Getting the line number of the nth match](bash/get-line-number-of-nth-match.md)
 * [Getopts](bash/getopts-flags.md)
+* [Print line at number](bash/print-single-line.md)
 * [Remove final newline](bash/remove-final-newline-from-output.md)
 * [Reading content between markers](bash/sed-awk-read-between-markers.md)
 * [Bash substring](bash/substring-contains.md)
+* [Run a function on interrupt or error](bash/trap-ctrl-c-err-cleanup.md)
 
 ## css
 
@@ -32,6 +36,9 @@
 ## groovy
 
 * [Appending items to a list](groovy/add-item-to-list.md)
+
+## notes
+
 
 ## podman
 
