@@ -50,9 +50,9 @@ least as large as the biggest number.
 <p>Second</p>
 ```
 
-> Margin is meant to increase the distance between siblings. It is _not_ meant to
-> increase the gap between a child and its parent's bounding box; that's what
-> padding is for.
+> Margin is meant to increase the distance between siblings. It is _not_ meant
+> to increase the gap between a child and its parent's bounding box; that's
+> what padding is for.
 
 The margin of the inner paragraph is transferred to the parent element. The
 effect would have been the same if the margin had been applied to the `<div>`

@@ -37,9 +37,6 @@
 
 * [Appending items to a list](groovy/add-item-to-list.md)
 
-## notes
-
-
 ## podman
 
 * [Target last container](podman/target-last-container.md)
