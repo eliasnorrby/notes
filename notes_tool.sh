@@ -154,7 +154,9 @@ divider_oneline() {
 preview() {
   if has_key "$1" 'snippets'; then
     print_snippet "$1"
+    echo
     divider_oneline
+    echo
   fi
 
   print_docs "$1"
