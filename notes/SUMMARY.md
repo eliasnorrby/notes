@@ -30,12 +30,16 @@
 ## git
 
 * [Conditional git config includes](git/config-conditional-includes-directory.md)
+* [Viewing the evolution of a line or function](git/evolution-of-a-line-or-function.md)
 * [Name of current branch](git/get-current-branch.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
 
 ## groovy
 
 * [Appending items to a list](groovy/add-item-to-list.md)
+
+## notes
+
 
 ## podman
 
