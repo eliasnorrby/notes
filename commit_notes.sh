@@ -33,5 +33,5 @@ done
 
 if [ "$1" = "prompt" ]; then
   echo
-  read -r -p "Press any key to close"
+  read -r -n 1 -p "Press any key to close "
 fi
