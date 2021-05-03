@@ -8,7 +8,7 @@ file=$(./notes_tool.sh list-with-tags | fzf \
   --reverse \
   --header "$header_first_row"$'\n'"$header_second_row" \
   --preview './notes_tool.sh preview {1}' \
-  --preview-window 'right:80:wrap' \
+  --preview-window 'right:81:wrap' \
   --bind 'alt-up:preview-up,alt-down:preview-down' \
   --bind 'ctrl-y:execute-silent(./notes_tool.sh copy {1})+abort' \
   --bind 'ctrl-r:execute-silent(./notes_tool.sh invalidate-cache)+reload(./notes_tool.sh list-with-tags)' \
