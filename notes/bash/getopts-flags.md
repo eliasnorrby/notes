@@ -17,8 +17,6 @@ snippets:
 
       EOF
 
-      set -eo pipefail
-
       if [ "$1" = "--help" ]; then
         echo "$USAGE" && exit 0
       fi
@@ -59,8 +57,6 @@ Example:
   ${0##*/} -f my-arg
 
 EOF
-
-set -eo pipefail
 
 if [ "$1" = "--help" ]; then
   echo "$USAGE" && exit 0
