@@ -28,4 +28,4 @@ detached HEAD state.
 git branch --show-current
 ```
 
-Source: `man git-rev-parse`, `man git-branc`
+Source: `man git-rev-parse`, `man git-branch`
