@@ -35,6 +35,10 @@
 * [Hide file from git diff output](git/remove-file-from-diff.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
 
+## github
+
+* [Setting up GitHub Actions](github/github-actions-setup.md)
+
 ## groovy
 
 * [Appending items to a list](groovy/add-item-to-list.md)
