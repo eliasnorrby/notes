@@ -32,6 +32,7 @@
 * [Conditional git config includes](git/config-conditional-includes-directory.md)
 * [Viewing the evolution of a line or function](git/evolution-of-a-line-or-function.md)
 * [Name of current branch](git/get-current-branch.md)
+* [Hide file from git diff output](git/remove-file-from-diff.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
 
 ## groovy
