@@ -8,6 +8,7 @@
 
 * [Case statement](bash/case-statement.md)
 * [Change quote style mid-string](bash/change-quote-mid-string.md)
+* [Directory of script](bash/directory-of-script.md)
 * [Using find to run a command on multiple files](bash/find-exec.md)
 * [Getting the line number of the nth match](bash/get-line-number-of-nth-match.md)
 * [Getopts](bash/getopts-flags.md)
@@ -32,6 +33,7 @@
 * [Conditional git config includes](git/config-conditional-includes-directory.md)
 * [Viewing the evolution of a line or function](git/evolution-of-a-line-or-function.md)
 * [Name of current branch](git/get-current-branch.md)
+* [Replaying a set of changes on a specific branch](git/rebase-onto.md)
 * [Hide file from git diff output](git/remove-file-from-diff.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
 
@@ -63,7 +65,12 @@
 
 * [The command-line window](vim/command-line-window.md)
 * [Opening a list of files in split windows](vim/open-files-in-splits.md)
+* [The tabular plugin](vim/tabularize.md)
 
 ## yaml
 
 * [Yaml multiline strings](yaml/multiline-strings.md)
+
+## zsh
+
+* [Lazy loading command setup](zsh/lazy-load-completion.md)
