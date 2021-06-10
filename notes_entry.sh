@@ -16,6 +16,7 @@ file=$(./notes_tool.sh list-with-tags | fzf \
   --bind 'ctrl-o:execute-silent(./notes_tool.sh open-in-browser {1})+abort' \
   --bind 'ctrl-p:execute(git push)' \
   --bind 'ctrl-w:execute(./commit_notes.sh prompt >&2)' \
+  --bind 'ctrl-f:execute(git pull --no-rebase)' \
   --bind 'alt-enter:print-query' \
   --print-query | tail -1 | cut -d " " -f 1
 )
