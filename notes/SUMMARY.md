@@ -15,8 +15,10 @@
 * [Print line at number](bash/print-single-line.md)
 * [Remove final newline](bash/remove-final-newline-from-output.md)
 * [Reading content between markers](bash/sed-awk-read-between-markers.md)
+* [Determine if a script was sourced or executed](bash/sourced-or-executed.md)
 * [Bash substring](bash/substring-contains.md)
 * [Run a function on interrupt or error](bash/trap-ctrl-c-err-cleanup.md)
+* [Reference variable by name](bash/variable-by-name.md)
 
 ## css
 
@@ -44,9 +46,6 @@
 ## groovy
 
 * [Appending items to a list](groovy/add-item-to-list.md)
-
-## notes
-
 
 ## podman
 
