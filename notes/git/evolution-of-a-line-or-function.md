@@ -5,7 +5,7 @@ tags:
 snippets:
   - syntax: bash
     content: |-
-      git log -L<start>:<end>:<file>
+      git log -L<start>,<end>:<file>
   - syntax: bash
     content: |-
       git log -L:<funcname>:<file>
