@@ -50,6 +50,10 @@
 ## notes
 
 
+## npm
+
+* [Update a value in a project's .npmrc](npm/set-local-config.md)
+
 ## podman
 
 * [Target last container](podman/target-last-container.md)
