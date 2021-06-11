@@ -18,6 +18,7 @@ snippets:
         lint:
           runs-on: ubuntu-latest
           steps:
+            - uses: actions/checkout@v2
             - name: yamllint
               run: yamllint .
 ---
@@ -38,6 +39,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: yamllint
         run: yamllint .
 ```
