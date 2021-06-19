@@ -57,10 +57,6 @@
 * [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
 * [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
 
-## ngrok
-
-* [Running ngrok in the background](ngrok/running-ngrok-in-the-background.md)
-
 ## notes
 
 
@@ -80,6 +76,10 @@
 ## tmux
 
 * [New window with prompt](tmux/new-window-with-prompt.md)
+
+## tools
+
+* [Running ngrok in the background](tools/running-ngrok-in-the-background.md)
 
 ## vim
 
