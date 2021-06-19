@@ -48,10 +48,18 @@
 
 * [Appending items to a list](groovy/add-item-to-list.md)
 
+## kubernetes
+
+* [Waiting for a pod to be ready](kubernetes/waiting-for-a-pod.md)
+
 ## make
 
 * [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
 * [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
+
+## ngrok
+
+* [Running ngrok in the background](ngrok/running-ngrok-in-the-background.md)
 
 ## notes
 
