@@ -8,6 +8,7 @@
 
 * [Case statement](bash/case-statement.md)
 * [Change quote style mid-string](bash/change-quote-mid-string.md)
+* [Comparing versions](bash/comparing-versions.md)
 * [Directory of script](bash/directory-of-script.md)
 * [Using find to run a command on multiple files](bash/find-exec.md)
 * [Getting the line number of the nth match](bash/get-line-number-of-nth-match.md)
@@ -46,6 +47,11 @@
 ## groovy
 
 * [Appending items to a list](groovy/add-item-to-list.md)
+
+## make
+
+* [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
+* [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
 
 ## notes
 
