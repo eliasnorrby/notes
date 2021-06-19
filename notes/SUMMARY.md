@@ -80,6 +80,7 @@
 ## tools
 
 * [Running ngrok in the background](tools/running-ngrok-in-the-background.md)
+* [Using entr to react to file changes](tools/using-entr-to-react-to-file-changes.md)
 
 ## vim
 
