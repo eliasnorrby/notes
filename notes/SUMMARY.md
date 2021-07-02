@@ -36,6 +36,7 @@
 * [Conditional git config includes](git/config-conditional-includes-directory.md)
 * [Viewing the evolution of a line or function](git/evolution-of-a-line-or-function.md)
 * [Name of current branch](git/get-current-branch.md)
+* [Get the path to the repository root](git/get-repository-root-path.md)
 * [Replaying a set of changes on a specific branch](git/rebase-onto.md)
 * [Hide file from git diff output](git/remove-file-from-diff.md)
 * [Listing untracked files with `git status`](git/status-untracked-files.md)
