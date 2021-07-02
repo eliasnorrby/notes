@@ -9,10 +9,12 @@
 * [Case statement](bash/case-statement.md)
 * [Change quote style mid-string](bash/change-quote-mid-string.md)
 * [Comparing versions](bash/comparing-versions.md)
+* [Hiding credentials on the command line](bash/credentials-on-command-line.md)
 * [Directory of script](bash/directory-of-script.md)
 * [Using find to run a command on multiple files](bash/find-exec.md)
 * [Getting the line number of the nth match](bash/get-line-number-of-nth-match.md)
 * [Getopts](bash/getopts-flags.md)
+* [Parsing output with long lines using less](bash/less-without-wrap.md)
 * [Print line at number](bash/print-single-line.md)
 * [Remove final newline](bash/remove-final-newline-from-output.md)
 * [Reading content between markers](bash/sed-awk-read-between-markers.md)
@@ -57,9 +59,6 @@
 
 * [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
 * [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
-
-## notes
-
 
 ## npm
 
