@@ -60,6 +60,9 @@
 * [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
 * [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
 
+## notes
+
+
 ## npm
 
 * [Update a value in a project's .npmrc](npm/set-local-config.md)
@@ -86,6 +89,7 @@
 
 * [The command-line window](vim/command-line-window.md)
 * [Opening a list of files in split windows](vim/open-files-in-splits.md)
+* [Spelling](vim/spelling.md)
 * [The tabular plugin](vim/tabularize.md)
 
 ## yaml
