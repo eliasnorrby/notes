@@ -88,6 +88,7 @@
 ## vim
 
 * [The command-line window](vim/command-line-window.md)
+* [Visual increment](vim/increment-visual.md)
 * [Opening a list of files in split windows](vim/open-files-in-splits.md)
 * [Spelling](vim/spelling.md)
 * [The tabular plugin](vim/tabularize.md)
