@@ -23,6 +23,10 @@
 * [Run a function on interrupt or error](bash/trap-ctrl-c-err-cleanup.md)
 * [Reference variable by name](bash/variable-by-name.md)
 
+## chrome
+
+* [Bypassing Chrome's NET::ERR_CERT_INVALID page](chrome/net-cert-invalid-bypass.md)
+
 ## css
 
 * [`box-sizing: border-box`](css/box-sizing-border-box.md)
