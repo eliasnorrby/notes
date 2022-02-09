@@ -64,9 +64,6 @@
 * [Passing arguments to make rules](make/passing-arguments-to-make-rule.md)
 * [Running make in a set of subdirectories](make/running-make-in-subdirectories.md)
 
-## notes
-
-
 ## npm
 
 * [Update a value in a project's .npmrc](npm/set-local-config.md)
@@ -88,6 +85,10 @@
 
 * [Running ngrok in the background](tools/running-ngrok-in-the-background.md)
 * [Using entr to react to file changes](tools/using-entr-to-react-to-file-changes.md)
+
+## typescript
+
+* [Inferring the type of elements in an array](typescript/inferring-an-array-type.md)
 
 ## vim
 
