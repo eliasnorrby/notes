@@ -96,6 +96,7 @@
 * [Populate quickfix list with eslint errors](vim/eslint-quickfix.md)
 * [Visual increment](vim/increment-visual.md)
 * [Opening a list of files in split windows](vim/open-files-in-splits.md)
+* [Insert line above matched line](vim/replace-line.md)
 * [Spelling](vim/spelling.md)
 * [The tabular plugin](vim/tabularize.md)
 
