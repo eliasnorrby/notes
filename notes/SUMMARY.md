@@ -99,6 +99,7 @@
 * [Insert line above matched line](vim/replace-line.md)
 * [Spelling](vim/spelling.md)
 * [The tabular plugin](vim/tabularize.md)
+* [Populate quickfix list with tsc errors](vim/tsc-quickfix.md)
 
 ## yaml
 
